@@ -25,4 +25,9 @@ test('add todo',() => {
   
     const table = screen.getByRole('table');
     expect(table).toHaveTextContent('Go to coffee');
+
+    const clearTodos = screen.getByText('Clear');
+    fireEvent.click(clearTodos);
+    const todosListVisible = screen.getByRole('table');
+    expect(todosListVisible).not.toBeInTheDocument();
   })
