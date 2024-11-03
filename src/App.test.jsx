@@ -28,6 +28,6 @@ test('add todo',() => {
 
     const clearTodos = screen.getByText('Clear');
     fireEvent.click(clearTodos);
-    const todosListVisible = screen.getByRole('td');
+    const todosListVisible = screen.queryByRole('td');
     expect(todosListVisible).not.toBeInTheDocument();
   })
